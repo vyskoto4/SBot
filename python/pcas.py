@@ -89,8 +89,8 @@ def run_svds(srcfname,savedir,var_thresh=0.6,components=2,verbose=True, savemat=
 
 
 
-savedir="/auto/brno2/home/tomak/eval/var"
-srcfile="/auto/brno2/home/tomak/eval/all"
+savedir="var/" # directory to which the results will be saved
+srcfile="all_groups" #  filename of Matrix Builder all groups output
 
-d=run_svds(srcfile,savedir, savemat=True)
+d=run_svds(srcfile,savedir, savemat=True) # extract the variance groups results, save the variance off all groups, if savemat=True - save the results of the svd too
 

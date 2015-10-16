@@ -51,29 +51,29 @@ def feature_avg(feature_keys, user_list,user_stats):
 	return output
 
 def eval_svd_groups(src_file, dictionary_file, userstats_file):
-query_dict={}
-user_stats={}
-for line in open(src_file):
-	linedata=json.loads(line[line.index("{"):])
-	query_dict[linedata['query']]=None
-	for query in linedata['qhashes']:
-		query_dict[query]=None
-	for user in linedata['uids']:
-		user_stats[user]=None
-query_dict=load_dictionary(dictionary_file,query_dict)
-user_stats=load_userstats(userstats_file,user_stats)
-session_stats=["js","rss","limit"]
-access_stats=["ip","ua"]
-outputdata=[]
-for line in open(src_file):
-	linedata=json.loads(line)
-	users=linedata['uids']
-	groupdata=[["query", query_dict[linedata['query']]], ["users", len(linedata['uids'])],["focusness", linedata['foc']]]
-	groupdata.extend(['queries', [query_dict[i] for i in linedata['qhashes']]])
-	groupdata.extend(top_shared_elmmt(access_stats, users, user_stats))
-	groupdata.extend(feature_avg(session_stats, users, user_stats))
-	outputdata.append(groupdata)
-return outputdata
+	query_dict={}
+	user_stats={}
+	for line in open(src_file):
+		linedata=json.loads(line[line.index("{"):])
+		query_dict[linedata['query']]=None
+		for query in linedata['qhashes']:
+			query_dict[query]=None
+		for user in linedata['uids']:
+			user_stats[user]=None
+	query_dict=load_dictionary(dictionary_file,query_dict)
+	user_stats=load_userstats(userstats_file,user_stats)
+	session_stats=["js","rss","limit"]
+	access_stats=["ip","ua"]
+	outputdata=[]
+	for line in open(src_file):
+		linedata=json.loads(line)
+		users=linedata['uids']
+		groupdata=[["query", query_dict[linedata['query']]], ["users", len(linedata['uids'])],["focusness", linedata['foc']]]
+		groupdata.extend(['queries', [query_dict[i] for i in linedata['qhashes']]])
+		groupdata.extend(top_shared_elmmt(access_stats, users, user_stats))
+		groupdata.extend(feature_avg(session_stats, users, user_stats))
+		outputdata.append(groupdata)
+	return outputdata
 
 def eval_focusness_groups(src_file, dictionary_file, userstats_file):
 	query_dict={}
@@ -97,7 +97,10 @@ def eval_focusness_groups(src_file, dictionary_file, userstats_file):
 		outputdata.append(groupdata)
 	return outputdata
 
+
 '''
+To evaluate focusness groups uncomment this section...
+
 dictionary_file="dictionary" # file with query_hash -> query mappings
 userstats_file="userstats" # file with user statistics 
 src_file="focusness_groups" # file with focusness>0.9 groups 
@@ -114,6 +117,9 @@ for groupdata in outputdata:
 output.close()
 '''
 
+'''
+To evaluate variance groups uncomment this section.
+If you have the raw Matrix Builder output, run the pcas.py script first.
 
 dictionary_file="dictionary" # file with query_hash -> query mappings
 userstats_file="userstats" # file with user statistics 
@@ -129,3 +135,4 @@ for groupdata in outputdata:
 	output.write("-"*40)
 	output.write("\n")
 output.close()
+'''
