@@ -13,6 +13,7 @@ To evaluate the focusness groups, you need the following files:
 * "User stats file" - the result of UserStats job
 * "Query dictionary file" - one of the results of UserQuery job( removing repeated lines  is recommended)
 * "Focusness groups file" - one of the results of MatrixBuilder job
+
 Then just supply the results_stats python script with these files according to the first block comment section.
 
 Focusness Groups Evaluation
