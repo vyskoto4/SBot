@@ -90,6 +90,7 @@ public class QCPairExtractor extends Configured implements Tool {
         int res = job.waitForCompletion(true) ? 0 : 1;
         if (res == 0) {
             FilesUtils.copySubdirectories(tempOutputPath, pipelinePath, hdfs);
+            hdfs.delete(tempOutputPath);
         }
         return res;
     }
