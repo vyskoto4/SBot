@@ -16,7 +16,7 @@ To evaluate the focusness groups, you need the following files:
 
 Then just supply the results_stats python script with these files according to the first block comment section.
 
-Focusness Groups Evaluation
+1st Principal Component Variance >60% Groups Evaluation
 ----------
 To evaluate the focusness groups, you need the following files:
 * "User stats file" - the result of UserStats job
