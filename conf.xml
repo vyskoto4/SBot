@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<configuration>
+        <property>
+                <name>pipeline.path.mainpath</name>
+                <value>sbotminer/</value>
+        </property>
+
+        <property>
+                <name>pipeline.currentperiodstart</name>
+                <value>1412114400</value>
+        </property>
+        <property>
+                <name>pipeline.input.history</name>
+                <value>historydata/</value>
+        </property>
+
+        <property>
+                <name>pipeline.input.current</name>
+                <value>currentdata/</value>
+        </property>
+
+        <property>
+                <name>pipeline.output</name>
+                <value>qcgroups/</value>
+        </property>
+        
+        <property>
+                <name>pipelne.threshold.focusness</name>
+                <value>0.9</value>
+        </property>
+        <property>
+                <name>pipeline.const.epsilon</name>
+                <value>0.001</value>
+        </property>
+
+        <property>
+                <name>pipeline.threshold.kld</name>
+                <value>0.05</value>
+        </property>
+
+        <property>
+                <name>pipeline.threshold.minusers</name>
+                <value>1000</value>
+        </property>
+
+        <property>
+                <name>pipeline.path.qcpairs</name>
+                <value>qcpairs/</value>
+        </property>
+
+        <property>
+                <name>pipeline.path.rawsuspuserlist</name>
+                <value>rawsuspuserlist/</value>
+        </property>
+
+        <property>
+                <name>pipeline.path.suspuserlist</name>
+                <value>suspuserlist/</value>
+        </property>
+
+        <property>
+                <name>pipeline.path.suspuserdata</name>
+                <value>suspuserdata/</value>
+        </property>
+
+        <property>
+                <name>suspicioususergrouper.output</name>
+                <value>suspuserqcs/</value>
+        </property>
+
+        <property>
+                <name>pipeline.path.userquery</name>
+                <value>userquery/</value>
+        </property>
+
+        <property>
+                <name>pipeline.path.query</name>
+                <value>query/</value>
+        </property>
+
+        <property>
+                <name>pipeline.path.userstats</name>
+                <value>userstats/</value>
+        </property>
+
+        <property>
+                <name>pipeline.path.focusnessgroups</name>
+                <value>focusnessgroups/</value>
+        </property>
+
+        <property>
+                <name>pipeline.path.allgroups</name>
+                <value>allgroups/</value>
+        </property>
+</configuration>
